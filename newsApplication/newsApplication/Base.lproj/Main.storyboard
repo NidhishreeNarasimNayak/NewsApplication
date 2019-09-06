@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="De9-Xj-bWO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GEt-mk-RYD">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7X-EL-1Pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1565" y="-4"/>
+            <point key="canvasLocation" x="-1572" y="-25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -69,7 +69,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="aRa-Xn-UxI" kind="show" id="4XP-6s-Ruv"/>
+                                            <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="69G-LC-jKf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-G3-p06">
@@ -83,7 +83,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="aRa-Xn-UxI" kind="show" id="Kfj-lJ-i8A"/>
+                                            <action selector="signInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bjp-sA-naR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -138,7 +138,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="hmT-Z3-aQL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-772.46376811594212" y="-4.0178571428571423"/>
+            <point key="canvasLocation" x="-704" y="-25"/>
         </scene>
         <!--Sign In Manual-->
         <scene sceneID="mfq-Dr-bBV">
@@ -163,7 +163,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignInManualLogin:" destination="aRa-Xn-UxI" eventType="touchUpInside" id="N0F-Pb-dMg"/>
+                                    <action selector="signInManualLogin:" destination="aRa-Xn-UxI" eventType="touchUpInside" id="N0F-Pb-dMg"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGd-xE-jrt">
@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="40.579710144927539" y="-4.0178571428571423"/>
         </scene>
-        <!--Sign Up-->
+        <!--Sign UpVC-->
         <scene sceneID="ttf-7C-PuF">
             <objects>
-                <viewController storyboardIdentifier="SignUp" id="De9-Xj-bWO" customClass="SignUp" customModule="newsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="De9-Xj-bWO" customClass="SignUpVC" customModule="newsApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yc4-dt-qVR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="SignUpButton:" destination="De9-Xj-bWO" eventType="touchUpInside" id="2aq-XL-lhj"/>
+                                                <action selector="signUpButton:" destination="De9-Xj-bWO" eventType="touchUpInside" id="2aq-XL-lhj"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -254,7 +254,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.032427298632878777" green="0.060207802638817233" blue="0.42970732868020312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.032427298629999997" green="0.060207802640000002" blue="0.4297073287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Hkc-aO-eYS" firstAttribute="top" secondItem="fnm-Ud-IuL" secondAttribute="bottom" constant="20" id="80u-sP-cwn"/>
@@ -270,8 +270,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.28714448156665062" green="0.3012477765233067" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="SignUpLabel" destination="fnm-Ud-IuL" id="mL7-Ka-TIb"/>
-                                            <outlet property="SignUpText" destination="Hkc-aO-eYS" id="giq-YA-3Zs"/>
+                                            <outlet property="textField" destination="Hkc-aO-eYS" id="giq-YA-3Zs"/>
+                                            <outlet property="titleLabel" destination="fnm-Ud-IuL" id="mL7-Ka-TIb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -296,7 +296,4 @@
             <point key="canvasLocation" x="815.94202898550736" y="16.741071428571427"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Kfj-lJ-i8A"/>
-    </inferredMetricsTieBreakers>
 </document>

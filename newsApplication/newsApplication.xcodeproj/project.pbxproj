@@ -10,10 +10,12 @@
 		70A9FBB760DB1FD91FC79AD0 /* Pods_newsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370784142F0F997C60130AA /* Pods_newsApplication.framework */; };
 		EA2342E9231E982D0040C277 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2342E8231E982D0040C277 /* GoogleSignIn.swift */; };
 		EA4A5E522320C71300E5929C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A5E512320C71300E5929C /* SignUpModel.swift */; };
+		EA4A5E5C2320EA4000E5929C /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A5E5B2320EA4000E5929C /* SignInModel.swift */; };
+		EA4A5E5E232102E900E5929C /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A5E5D232102E900E5929C /* SignUpVM.swift */; };
+		EA4A5E632321256F00E5929C /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA4A5E622321256F00E5929C /* swiftlint.yml */; };
 		EAB9A32A231F8D2C00787FF8 /* SignInManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A329231F8D2C00787FF8 /* SignInManual.swift */; };
 		EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */; };
-		EAB9A32F231FD2AA00787FF8 /* nextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A32E231FD2AA00787FF8 /* nextController.swift */; };
-		EAB9A331231FFEE600787FF8 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A330231FFEE600787FF8 /* SignUp.swift */; };
+		EAB9A331231FFEE600787FF8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A330231FFEE600787FF8 /* SignUpVC.swift */; };
 		EAB9A334231FFF2B00787FF8 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A333231FFF2B00787FF8 /* SignUpCell.swift */; };
 		EACC7B7D231E406A00C0E0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */; };
 		EACC7B7F231E406A00C0E0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC7B7E231E406A00C0E0FE /* ViewController.swift */; };
@@ -28,10 +30,12 @@
 		E3D233416FAC0EF6A25FCC9F /* Pods-newsApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApplication.debug.xcconfig"; path = "Target Support Files/Pods-newsApplication/Pods-newsApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2342E8231E982D0040C277 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		EA4A5E512320C71300E5929C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		EA4A5E5B2320EA4000E5929C /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		EA4A5E5D232102E900E5929C /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		EA4A5E622321256F00E5929C /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = "<group>"; };
 		EAB9A329231F8D2C00787FF8 /* SignInManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManual.swift; sourceTree = "<group>"; };
 		EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EAB9A32E231FD2AA00787FF8 /* nextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextController.swift; sourceTree = "<group>"; };
-		EAB9A330231FFEE600787FF8 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		EAB9A330231FFEE600787FF8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		EAB9A333231FFF2B00787FF8 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		EACC7B79231E406A00C0E0FE /* newsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,15 +78,80 @@
 		EA4A5E502320C67300E5929C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A5E512320C71300E5929C /* SignUpModel.swift */,
+				EA4A5E5A2320EA1200E5929C /* SignIn */,
+				EA4A5E592320EA0400E5929C /* SignUp */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EA4A5E532320E7F500E5929C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EACC7B7E231E406A00C0E0FE /* ViewController.swift */,
+				EA4A5E582320E98200E5929C /* SignUpUser */,
+				EA4A5E572320E93C00E5929C /* GoogleSignIn */,
+				EA4A5E562320E85200E5929C /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA4A5E542320E7FE00E5929C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A5E5D232102E900E5929C /* SignUpVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EA4A5E562320E85200E5929C /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9A333231FFF2B00787FF8 /* SignUpCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		EA4A5E572320E93C00E5929C /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EA2342E8231E982D0040C277 /* GoogleSignIn.swift */,
+				EAB9A329231F8D2C00787FF8 /* SignInManual.swift */,
+			);
+			path = GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		EA4A5E582320E98200E5929C /* SignUpUser */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9A330231FFEE600787FF8 /* SignUpVC.swift */,
+			);
+			path = SignUpUser;
+			sourceTree = "<group>";
+		};
+		EA4A5E592320EA0400E5929C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A5E512320C71300E5929C /* SignUpModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		EA4A5E5A2320EA1200E5929C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A5E5B2320EA4000E5929C /* SignInModel.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		EACC7B70231E406A00C0E0FE = {
 			isa = PBXGroup;
 			children = (
+				EA4A5E622321256F00E5929C /* swiftlint.yml */,
 				EACC7B7B231E406A00C0E0FE /* newsApplication */,
+				EA4A5E532320E7F500E5929C /* View */,
+				EA4A5E502320C67300E5929C /* Model */,
+				EA4A5E542320E7FE00E5929C /* ViewModel */,
 				EACC7B7A231E406A00C0E0FE /* Products */,
 				06832EEEC81083F3E711C1F0 /* Pods */,
 				0BBEC69BA9E068A679DDA0DB /* Frameworks */,
@@ -100,19 +169,12 @@
 		EACC7B7B231E406A00C0E0FE /* newsApplication */ = {
 			isa = PBXGroup;
 			children = (
-				EAB9A32E231FD2AA00787FF8 /* nextController.swift */,
-				EAB9A329231F8D2C00787FF8 /* SignInManual.swift */,
 				EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */,
-				EACC7B7E231E406A00C0E0FE /* ViewController.swift */,
 				EACC7B80231E406A00C0E0FE /* Main.storyboard */,
 				EACC7B83231E407700C0E0FE /* Assets.xcassets */,
 				EACC7B85231E407700C0E0FE /* LaunchScreen.storyboard */,
 				EACC7B88231E407700C0E0FE /* Info.plist */,
 				EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */,
-				EA2342E8231E982D0040C277 /* GoogleSignIn.swift */,
-				EAB9A330231FFEE600787FF8 /* SignUp.swift */,
-				EAB9A333231FFF2B00787FF8 /* SignUpCell.swift */,
-				EA4A5E502320C67300E5929C /* Model */,
 			);
 			path = newsApplication;
 			sourceTree = "<group>";
@@ -130,6 +192,7 @@
 				EACC7B77231E406A00C0E0FE /* Resources */,
 				C043EDCCDC4D1FAD14ECC299 /* [CP] Embed Pods Frameworks */,
 				9088B8AA838ACA36454A6A14 /* [CP] Copy Pods Resources */,
+				EA4A5E612321248000E5929C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EACC7B87231E407700C0E0FE /* LaunchScreen.storyboard in Resources */,
+				EA4A5E632321256F00E5929C /* swiftlint.yml in Resources */,
 				EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */,
 				EACC7B84231E407700C0E0FE /* Assets.xcassets in Resources */,
 				EACC7B82231E406A00C0E0FE /* Main.storyboard in Resources */,
@@ -244,6 +308,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsApplication/Pods-newsApplication-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA4A5E612321248000E5929C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -251,12 +332,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB9A32F231FD2AA00787FF8 /* nextController.swift in Sources */,
-				EAB9A331231FFEE600787FF8 /* SignUp.swift in Sources */,
+				EAB9A331231FFEE600787FF8 /* SignUpVC.swift in Sources */,
+				EA4A5E5E232102E900E5929C /* SignUpVM.swift in Sources */,
 				EA2342E9231E982D0040C277 /* GoogleSignIn.swift in Sources */,
 				EA4A5E522320C71300E5929C /* SignUpModel.swift in Sources */,
 				EACC7B7F231E406A00C0E0FE /* ViewController.swift in Sources */,
 				EACC7B7D231E406A00C0E0FE /* AppDelegate.swift in Sources */,
+				EA4A5E5C2320EA4000E5929C /* SignInModel.swift in Sources */,
 				EAB9A334231FFF2B00787FF8 /* SignUpCell.swift in Sources */,
 				EAB9A32A231F8D2C00787FF8 /* SignInManual.swift in Sources */,
 			);

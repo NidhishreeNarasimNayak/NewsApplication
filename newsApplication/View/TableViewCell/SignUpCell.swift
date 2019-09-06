@@ -9,8 +9,6 @@
 import UIKit
 
 class SignUpCell: UITableViewCell {
-    
-    @IBOutlet weak var SignUpLabel: UILabel!
-    @IBOutlet weak var SignUpText: UITextField!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
 }
