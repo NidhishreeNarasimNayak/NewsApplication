@@ -10,6 +10,7 @@ import GoogleSignIn
 class FireBaseConfig: NSObject, GIDSignInDelegate {
     var googleSignInHandler: ((_ isSucess: Bool) -> Void)?
     static let shared = FireBaseConfig()
+    
     private override init() {
         super.init() // to acccess the NSObject properties
     }
@@ -22,5 +23,6 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print(user?.profile.email ?? "")
         googleSignInHandler?(error == nil)
+        
     }
 }

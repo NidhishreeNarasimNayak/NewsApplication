@@ -10,20 +10,22 @@ import Foundation
 enum AuthType: Int {
     case signUp
     case signIn
+    
     var dataSet: [UserData] {
-    switch self {
-    case .signUp:
-        return [.email, .password, .confirmPassword]
-    case .signIn:
-        return [.email, .password]
-            }
+        switch self {
+        case .signUp:
+            return [.email, .password, .confirmPassword]
+        case .signIn:
+            return [.email, .password]
+        }
     }
 }
 //for signin and signup
-enum UserData {
+enum UserData: Int {
     case email
     case password
     case confirmPassword
+    
     var title: String {
         switch self {
         case .email:
@@ -47,11 +49,31 @@ enum UserData {
 }
 
 class AuthViewModel {
-    var signUpModel: SignupModel?
-    var signInModel: SignInModel?
+    var signUpModel = SignupModel(email: "", password: "", confirmPassword: "")
+    var signInModel = SignInModel(email: "", password: "")
     var userDataList: [UserData] = []
+    
     func getAuthData(authType: AuthType) {
-        //let signInModel = SignInModel(email: <#T##String#>, password: <#T##String#>)
         userDataList = authType.dataSet
+    }
+    func updateEmail(emailText: String, authType: AuthType) {
+        signUpModel.email = emailText
+        if authType == .signUp {
+            signUpModel.email = emailText
+        } else {
+            signInModel.email = emailText
+        }
+    }
+    
+    func updatePassword(passwordText: String, authType: AuthType) {
+        if authType == .signUp {
+            signUpModel.password = passwordText
+        } else {
+            signInModel.password = passwordText
+        }
+    }
+    
+    func getConfirmPassword(confirmPasswordText: String) {
+        signUpModel.confirmPassword = confirmPasswordText
     }
 }

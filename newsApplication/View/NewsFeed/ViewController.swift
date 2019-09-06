@@ -17,15 +17,17 @@ class ViewController: UIViewController {
             print(isSucess)
         }
     }
-    @IBAction func googleSignIn(_ sender: Any) {
+    @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
-    @IBAction func createNewAccount(_ sender: Any) {
-        navigateToSIgnUpVC(authType: .signUp)
+    @IBAction private func createNewAccount(_ sender: Any) {
+        navigateToSIgnUpVC(authType: .signUp)  
     }
-    @IBAction func signInAction(_ sender: Any) {
+    
+    @IBAction private func signInAction(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signIn)
     }
+    
     func navigateToSIgnUpVC(authType: AuthType) {
         guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
             return

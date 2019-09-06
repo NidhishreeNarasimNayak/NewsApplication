@@ -9,7 +9,7 @@
 import Foundation
 
 struct SignupModel {
-    let email: String
-    let password: String
-    let confirmPassword: String
+  var email: String
+    var password: String
+    var confirmPassword: String
 }

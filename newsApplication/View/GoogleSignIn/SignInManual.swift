@@ -12,11 +12,12 @@ import Firebase
 class SignInManual: UIViewController {
     @IBOutlet weak var emailManual: UITextField!
     @IBOutlet weak var passwordManual: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func signInManualLogin(_ sender: Any) {
+    @IBAction private func signInManualLogin(_ sender: Any) {
         let email = emailManual.text ?? ""
         let password = passwordManual.text ?? ""
         Auth.auth().createUser(withEmail: email, password: password) { (user, signUperror) in
@@ -25,8 +26,7 @@ class SignInManual: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     print("user")
                 })
-            }
-             else {
+            } else {
                 print(signUperror?.localizedDescription ?? "Account present")
             }
         }
