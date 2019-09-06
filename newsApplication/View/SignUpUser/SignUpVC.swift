@@ -41,14 +41,14 @@ class SignUpVC: UIViewController {
     @IBAction private func didTapLoginButton(_ sender: Any) {
         self.resignFirstResponder()
         if authType == .signIn {
-            Auth.auth().signIn(withEmail: authViewModel.signInModel.email , password: authViewModel.signInModel.password) { (user, error) in
+            Auth.auth().signIn(withEmail: authViewModel.signInModel.email , password: authViewModel.signInModel.password) { (_, error) in
                 if error == nil {
                    self.presentNewsFeedVC()
                     //let controller = storyboard?.instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
                 }
             }
         } else if authType == .signUp {
-            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.password) { (user, error) in
+            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.password) { (_, error) in
                 if error == nil {
                     self.presentNewsFeedVC()
                 }

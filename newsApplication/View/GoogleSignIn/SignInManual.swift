@@ -20,10 +20,10 @@ class SignInManual: UIViewController {
     @IBAction private func signInManualLogin(_ sender: Any) {
         let email = emailManual.text ?? ""
         let password = passwordManual.text ?? ""
-        Auth.auth().createUser(withEmail: email, password: password) { (user, signUperror) in
+        Auth.auth().createUser(withEmail: email, password: password) { (_, signUperror) in
             if signUperror == nil {
                 print("Creating new account and signing in. User not present")
-                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                Auth.auth().signIn(withEmail: email, password: password, completion: { (_,_) in
                     print("user")
                 })
             } else {
