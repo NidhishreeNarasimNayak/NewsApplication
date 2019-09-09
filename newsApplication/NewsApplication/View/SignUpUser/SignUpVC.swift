@@ -24,7 +24,7 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textChangeButton()
-    }
+}
     
     /// function used to change the text of the button
     func textChangeButton() {
@@ -38,23 +38,31 @@ class SignUpVC: UIViewController {
     /// function used to navigate to my next VIewController NewsFeedVC
     func presentNewsFeedVC() {
         guard  let newsFeed = UIStoryboard(name: "NewsFeed", bundle: nil).instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC else { return }
-        self.navigationController?.pushViewController(newsFeed, animated: true)
+        //self.navigationController?.pushViewController(newsFeed, animated: true)
+      //  self.presentingViewController?.dismiss(animated: false, completion:nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
+//    func addBottomBorder(){
+//        let bottomLine = CALayer()
+//        bottomLine.frame = CGRect.init(x: 0, y: frame.size.height - 1, width: self.frame.size.width, height: 1)
+//        bottomLine.backgroundColor = UIColor.white.cgColor
+//        self.borderStyle = .none
+//        self.layer.addSublayer(bottomLine)
+//
+//    }
+    
     @IBAction private func didTapLoginButton(_ sender: Any) {
-        
-        //self.resignFirstResponder()
+        view.endEditing(true)
         if authType == .signIn {
             Auth.auth().signIn(withEmail: authViewModel.signInModel.email , password: authViewModel.signInModel.password) { (_, error) in
                 if error == nil {
-                   self.view.endEditing(true)
                    self.presentNewsFeedVC()
                 }
             }
         } else if authType == .signUp {
-            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.confirmPassword) { (_, error) in
+            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.password) { (_, error) in
                 if error == nil {
-                    
                     self.presentNewsFeedVC()
                 }
             }
@@ -62,6 +70,7 @@ class SignUpVC: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +83,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
             signUpCell.textField.placeholder = authViewModel.userDataList[indexPath.row].placeholdertext
             signUpCell.textField.delegate = self
             signUpCell.textField.tag = indexPath.row
+            signUpCell.textField.borderStyle = .none
             signUpCell.textField.isSecureTextEntry = false
             if (signUpCell.textField.tag == 1) || ( signUpCell.textField.tag == 2) {
                 signUpCell.textField.isSecureTextEntry = true
@@ -88,6 +98,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
 extension SignUpVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         //   print(textField.text, UserData(rawValue: textField.tag))
@@ -97,6 +108,7 @@ extension SignUpVC: UITextFieldDelegate {
             authViewModel.updateEmail(emailText: textField.text ?? "", authType: authType)
         case .password:
             authViewModel.updatePassword(passwordText: textField.text ?? "", authType: authType)
+            view.endEditing(true)
         case .confirmPassword:
             authViewModel.getConfirmPassword(confirmPasswordText: textField.text ?? "")
             }

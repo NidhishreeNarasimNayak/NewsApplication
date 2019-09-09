@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		70A9FBB760DB1FD91FC79AD0 /* Pods_newsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370784142F0F997C60130AA /* Pods_newsApplication.framework */; };
 		EA509CEF232288D900EA4FB0 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */; };
-		EA509CF12322A51600EA4FB0 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA509CF02322A51600EA4FB0 /* swiftlint.yml */; };
 		EA71A994232656B00053D45F /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A989232656B00053D45F /* NewsFeedCell.swift */; };
 		EA71A995232656B00053D45F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98B232656B00053D45F /* SignUpVC.swift */; };
 		EA71A996232656B00053D45F /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98D232656B00053D45F /* SignUpCell.swift */; };
@@ -20,6 +19,7 @@
 		EA71A9A7232657230053D45F /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A4232657230053D45F /* SignUpModel.swift */; };
 		EA71A9A8232657230053D45F /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A6232657230053D45F /* SignInModel.swift */; };
 		EA71A9AB232657A30053D45F /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9AA232657A30053D45F /* SignUpVM.swift */; };
+		EA71A9AF2326891C0053D45F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA71A9AE2326891C0053D45F /* .swiftlint.yml */; };
 		EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */; };
 		EACC7B7D231E406A00C0E0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */; };
 		EACC7B82231E406A00C0E0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC7B80231E406A00C0E0FE /* Main.storyboard */; };
@@ -32,7 +32,6 @@
 		9BC71FBCDEDE3AF7E1D67E13 /* Pods-newsApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApplication.release.xcconfig"; path = "Target Support Files/Pods-newsApplication/Pods-newsApplication.release.xcconfig"; sourceTree = "<group>"; };
 		E3D233416FAC0EF6A25FCC9F /* Pods-newsApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApplication.debug.xcconfig"; path = "Target Support Files/Pods-newsApplication/Pods-newsApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
-		EA509CF02322A51600EA4FB0 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = "<group>"; };
 		EA71A989232656B00053D45F /* NewsFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		EA71A98B232656B00053D45F /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		EA71A98D232656B00053D45F /* SignUpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		EA71A9A4232657230053D45F /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		EA71A9A6232657230053D45F /* SignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		EA71A9AA232657A30053D45F /* SignUpVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		EA71A9AE2326891C0053D45F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EACC7B79231E406A00C0E0FE /* newsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 		EACC7B70231E406A00C0E0FE = {
 			isa = PBXGroup;
 			children = (
-				EA509CF02322A51600EA4FB0 /* swiftlint.yml */,
-				EACC7B7B231E406A00C0E0FE /* newsApplication */,
+				EA71A9AE2326891C0053D45F /* .swiftlint.yml */,
+				EACC7B7B231E406A00C0E0FE /* NewsApplication */,
 				EACC7B7A231E406A00C0E0FE /* Products */,
 				06832EEEC81083F3E711C1F0 /* Pods */,
 				0BBEC69BA9E068A679DDA0DB /* Frameworks */,
@@ -187,7 +187,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EACC7B7B231E406A00C0E0FE /* newsApplication */ = {
+		EACC7B7B231E406A00C0E0FE /* NewsApplication */ = {
 			isa = PBXGroup;
 			children = (
 				EA71A9A9232657A30053D45F /* ViewModel */,
@@ -201,7 +201,7 @@
 				EACC7B88231E407700C0E0FE /* Info.plist */,
 				EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */,
 			);
-			path = newsApplication;
+			path = NewsApplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA71A9AF2326891C0053D45F /* .swiftlint.yml in Resources */,
 				EACC7B87231E407700C0E0FE /* LaunchScreen.storyboard in Resources */,
-				EA509CF12322A51600EA4FB0 /* swiftlint.yml in Resources */,
 				EA509CEF232288D900EA4FB0 /* NewsFeed.storyboard in Resources */,
 				EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */,
 				EACC7B84231E407700C0E0FE /* Assets.xcassets in Resources */,

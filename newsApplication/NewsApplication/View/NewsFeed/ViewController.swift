@@ -12,6 +12,8 @@ import GoogleSignIn
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
         GIDSignIn.sharedInstance()?.presentingViewController = self
         FireBaseConfig.shared.googleSignInHandler = { ( isSucess: Bool) -> Void in
             print(isSucess)
