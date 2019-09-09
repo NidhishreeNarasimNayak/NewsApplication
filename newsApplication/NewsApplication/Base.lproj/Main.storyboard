@@ -192,8 +192,16 @@
                                                     <color key="textColor" red="0.056561782790000001" green="0.096163674190000006" blue="0.64310358499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UW-am-9d4">
+                                                    <rect key="frame" x="30" y="303" width="354" height="3"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="3" id="Dsh-s1-aUZ"/>
+                                                        <constraint firstAttribute="width" constant="354" id="psv-mv-ASh"/>
+                                                    </constraints>
+                                                </view>
                                                 <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-aO-eYS">
-                                                    <rect key="frame" x="30" y="80.5" width="354" height="246"/>
+                                                    <rect key="frame" x="30" y="80.5" width="354" height="212.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" red="0.056561782790000001" green="0.096163674190000006" blue="0.64310358499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -203,13 +211,16 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="top" secondItem="fnm-Ud-IuL" secondAttribute="bottom" constant="20" id="80u-sP-cwn"/>
-                                                <constraint firstItem="fnm-Ud-IuL" firstAttribute="top" secondItem="t4O-py-zdi" secondAttribute="top" constant="40" id="PKO-eh-4XC"/>
-                                                <constraint firstItem="fnm-Ud-IuL" firstAttribute="leading" secondItem="t4O-py-zdi" secondAttribute="leading" constant="30" id="QrZ-kE-piS"/>
-                                                <constraint firstAttribute="trailing" secondItem="fnm-Ud-IuL" secondAttribute="trailing" constant="30" id="RT5-SQ-qDk"/>
-                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="leading" secondItem="fnm-Ud-IuL" secondAttribute="leading" id="am4-Cu-SDt"/>
-                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="trailing" secondItem="fnm-Ud-IuL" secondAttribute="trailing" id="uv2-ko-us5"/>
-                                                <constraint firstAttribute="bottom" secondItem="Hkc-aO-eYS" secondAttribute="bottom" constant="10" id="vWS-Dm-jDA"/>
+                                                <constraint firstItem="5UW-am-9d4" firstAttribute="leading" secondItem="fnm-Ud-IuL" secondAttribute="leading" id="33J-LJ-eTu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5UW-am-9d4" secondAttribute="bottom" constant="20" id="BBt-0G-Pxm"/>
+                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="trailing" secondItem="fnm-Ud-IuL" secondAttribute="trailing" id="Bmn-jp-h4H"/>
+                                                <constraint firstItem="fnm-Ud-IuL" firstAttribute="top" secondItem="t4O-py-zdi" secondAttribute="top" constant="40" id="Ffl-1t-0vY"/>
+                                                <constraint firstAttribute="trailing" secondItem="fnm-Ud-IuL" secondAttribute="trailing" constant="30" id="LPZ-6k-9rF"/>
+                                                <constraint firstItem="fnm-Ud-IuL" firstAttribute="leading" secondItem="t4O-py-zdi" secondAttribute="leading" constant="30" id="Z3M-0C-6zv"/>
+                                                <constraint firstItem="5UW-am-9d4" firstAttribute="trailing" secondItem="fnm-Ud-IuL" secondAttribute="trailing" id="d80-NP-1ZS"/>
+                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="top" secondItem="fnm-Ud-IuL" secondAttribute="bottom" constant="20" id="jYM-AL-UbM"/>
+                                                <constraint firstItem="Hkc-aO-eYS" firstAttribute="leading" secondItem="fnm-Ud-IuL" secondAttribute="leading" id="o3P-OS-arb"/>
+                                                <constraint firstItem="5UW-am-9d4" firstAttribute="top" secondItem="Hkc-aO-eYS" secondAttribute="bottom" constant="10" id="yGf-zw-Hbz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
