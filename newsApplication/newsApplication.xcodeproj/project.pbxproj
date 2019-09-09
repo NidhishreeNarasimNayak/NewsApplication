@@ -15,6 +15,7 @@
 		EA509CEC232284A400EA4FB0 /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA509CEB232284A400EA4FB0 /* NewsFeedVC.swift */; };
 		EA509CEF232288D900EA4FB0 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */; };
 		EA509CF12322A51600EA4FB0 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA509CF02322A51600EA4FB0 /* swiftlint.yml */; };
+		EAB05FD62323749E00958754 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB05FD52323749E00958754 /* NewsFeedCell.swift */; };
 		EAB9A32A231F8D2C00787FF8 /* SignInManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A329231F8D2C00787FF8 /* SignInManual.swift */; };
 		EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */; };
 		EAB9A331231FFEE600787FF8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9A330231FFEE600787FF8 /* SignUpVC.swift */; };
@@ -37,6 +38,7 @@
 		EA509CEB232284A400EA4FB0 /* NewsFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
 		EA509CF02322A51600EA4FB0 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftlint.yml; sourceTree = "<group>"; };
+		EAB05FD52323749E00958754 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		EAB9A329231F8D2C00787FF8 /* SignInManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManual.swift; sourceTree = "<group>"; };
 		EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAB9A330231FFEE600787FF8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		EA4A5E532320E7F500E5929C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EAB05FD42323745700958754 /* CollectionViewCell */,
 				EA509CED2322853F00EA4FB0 /* NewsFeed */,
 				EA4A5E582320E98200E5929C /* SignUpUser */,
 				EA4A5E572320E93C00E5929C /* GoogleSignIn */,
@@ -155,6 +158,14 @@
 				EA509CEB232284A400EA4FB0 /* NewsFeedVC.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		EAB05FD42323745700958754 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EAB05FD52323749E00958754 /* NewsFeedCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		EACC7B70231E406A00C0E0FE = {
@@ -357,6 +368,7 @@
 				EAB9A334231FFF2B00787FF8 /* SignUpCell.swift in Sources */,
 				EA509CEC232284A400EA4FB0 /* NewsFeedVC.swift in Sources */,
 				EAB9A32A231F8D2C00787FF8 /* SignInManual.swift in Sources */,
+				EAB05FD62323749E00958754 /* NewsFeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

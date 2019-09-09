@@ -10,10 +10,20 @@ import UIKit
 
 class NewsFeedVC: UIViewController {
 
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+}
+}
+extension NewsFeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let newsFeedCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: NewsFeedCell.self), for: indexPath) as? NewsFeedCell {
+            newsFeedCell.backgroundColor = UIColor.yellow
+             return newsFeedCell
+        }
+      return UICollectionViewCell()
+    }
 }

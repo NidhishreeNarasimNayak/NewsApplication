@@ -39,7 +39,8 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction private func didTapLoginButton(_ sender: Any) {
-        self.resignFirstResponder()
+        
+        //self.resignFirstResponder()
         if authType == .signIn {
             Auth.auth().signIn(withEmail: authViewModel.signInModel.email , password: authViewModel.signInModel.password) { (_, error) in
                 if error == nil {
@@ -48,8 +49,9 @@ class SignUpVC: UIViewController {
                 }
             }
         } else if authType == .signUp {
-            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.password) { (_, error) in
+            Auth.auth().createUser(withEmail: authViewModel.signUpModel.email, password: authViewModel.signUpModel.confirmPassword) { (_, error) in
                 if error == nil {
+                    
                     self.presentNewsFeedVC()
                 }
             }
@@ -67,10 +69,12 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
             tableView.separatorStyle = .none
             signUpCell.titleLabel.text = authViewModel.userDataList[indexPath.row].title
             signUpCell.textField.placeholder = authViewModel.userDataList[indexPath.row].placeholdertext
-            //signUpCell.titleLabel.tag = indexPath.row
             signUpCell.textField.delegate = self
             signUpCell.textField.tag = indexPath.row
-            print(indexPath.row)
+            signUpCell.textField.isSecureTextEntry = false
+            if (signUpCell.textField.tag == 1) || ( signUpCell.textField.tag == 2) {
+                signUpCell.textField.isSecureTextEntry = true
+            }
             return signUpCell
         }
         return UITableViewCell()

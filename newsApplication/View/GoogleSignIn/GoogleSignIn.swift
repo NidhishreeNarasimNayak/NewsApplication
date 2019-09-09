@@ -14,15 +14,21 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
     private override init() {
         super.init() // to acccess the NSObject properties
     }
-
+    
     func googleSetUp() {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
     }
-
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print(user?.profile.email ?? "")
         googleSignInHandler?(error == nil)
-        
+        guard let authentication = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credentials) { (_, error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
 }

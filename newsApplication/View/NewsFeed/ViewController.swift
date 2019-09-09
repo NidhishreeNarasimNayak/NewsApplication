@@ -17,9 +17,11 @@ class ViewController: UIViewController {
             print(isSucess)
         }
     }
+    
     @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
+    
     @IBAction private func createNewAccount(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signUp)  
     }
@@ -28,6 +30,9 @@ class ViewController: UIViewController {
         navigateToSIgnUpVC(authType: .signIn)
     }
     
+    /// this method is to navigate to the next viewController which is SignUpVC
+    ///
+    /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore AUthType is used to swtch between signUp and signIn
     func navigateToSIgnUpVC(authType: AuthType) {
         guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
             return

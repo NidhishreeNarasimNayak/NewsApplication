@@ -114,13 +114,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KGr-WA-9mH" firstAttribute="centerX" secondItem="BbU-Fp-rs6" secondAttribute="centerX" id="501-jC-ykJ"/>
                             <constraint firstItem="QrS-ZM-qyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="6RD-wa-IU0"/>
                             <constraint firstItem="BbU-Fp-rs6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cmb-em-FWv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="74j-3k-9TC" secondAttribute="trailing" id="G7d-6T-H6s"/>
                             <constraint firstItem="74j-3k-9TC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gup-ui-DoA"/>
                             <constraint firstItem="KGr-WA-9mH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="IzF-Ah-20e"/>
-                            <constraint firstItem="QrS-ZM-qyH" firstAttribute="centerX" secondItem="BbU-Fp-rs6" secondAttribute="centerX" id="KX5-p8-IfI"/>
                             <constraint firstItem="BbU-Fp-rs6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="PLe-y3-9V9"/>
                             <constraint firstItem="74j-3k-9TC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W5S-P0-Xlo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wd3-TT-2LJ" secondAttribute="bottom" constant="15" id="WMQ-IA-hPb"/>
