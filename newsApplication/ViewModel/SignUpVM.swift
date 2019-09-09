@@ -7,7 +7,7 @@
 //
 
 import Foundation
-///enum used to detect signup or signin login action 
+///enum used to detect signup or signin login action
 enum AuthType: Int {
     case signUp
     case signIn

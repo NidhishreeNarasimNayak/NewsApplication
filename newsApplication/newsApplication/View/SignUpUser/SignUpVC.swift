@@ -47,8 +47,8 @@ class SignUpVC: UIViewController {
         if authType == .signIn {
             Auth.auth().signIn(withEmail: authViewModel.signInModel.email , password: authViewModel.signInModel.password) { (_, error) in
                 if error == nil {
+                   self.view.endEditing(true)
                    self.presentNewsFeedVC()
-                    //let controller = storyboard?.instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
                 }
             }
         } else if authType == .signUp {
