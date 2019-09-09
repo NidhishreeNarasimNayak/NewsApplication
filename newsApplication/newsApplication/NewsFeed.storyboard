@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EYa-OA-OVL">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News FeedVC-->
+        <scene sceneID="bVe-am-JKS">
+            <objects>
+                <viewController storyboardIdentifier="NewsFeedVC" id="EYa-OA-OVL" customClass="NewsFeedVC" customModule="newsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="krx-pQ-q9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e72-9k-uKV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N7n-7Z-CqW">
+                                    <size key="itemSize" width="388" height="79"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsFeedCell" id="dpy-o9-sWK" customClass="NewsFeedCell" customModule="newsApplication" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="0.0" width="388" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="EYa-OA-OVL" id="YP4-4b-9uD"/>
+                                    <outlet property="delegate" destination="EYa-OA-OVL" id="nVT-HI-ah9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54206980689999995" green="0.70521527569999998" blue="0.98132258650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dv5-hw-MEA" firstAttribute="trailing" secondItem="e72-9k-uKV" secondAttribute="trailing" id="4ob-Od-TQD"/>
+                            <constraint firstItem="e72-9k-uKV" firstAttribute="top" secondItem="dv5-hw-MEA" secondAttribute="top" id="BjC-Q1-Izx"/>
+                            <constraint firstItem="e72-9k-uKV" firstAttribute="leading" secondItem="dv5-hw-MEA" secondAttribute="leading" id="MwA-b9-sb9"/>
+                            <constraint firstItem="dv5-hw-MEA" firstAttribute="bottom" secondItem="e72-9k-uKV" secondAttribute="bottom" id="TBi-lt-fZU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dv5-hw-MEA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBh-lp-IgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="17"/>
+        </scene>
+    </scenes>
+</document>
