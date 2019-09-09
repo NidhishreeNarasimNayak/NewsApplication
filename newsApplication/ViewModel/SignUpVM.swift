@@ -7,6 +7,7 @@
 //
 
 import Foundation
+///enum used to detect signup or signin login action 
 enum AuthType: Int {
     case signUp
     case signIn
@@ -20,7 +21,7 @@ enum AuthType: Int {
         }
     }
 }
-//for signin and signup
+/// enum used to take email, password and confirm password as input
 enum UserData: Int {
     case email
     case password
@@ -48,14 +49,16 @@ enum UserData: Int {
     }
 }
 
+/// class used to get all the userdata and update it
 class AuthViewModel {
     var signUpModel = SignupModel(email: "", password: "", confirmPassword: "")
     var signInModel = SignInModel(email: "", password: "")
     var userDataList: [UserData] = []
-    
+    /// function used get the data from the user for signup and signin
     func getAuthData(authType: AuthType) {
         userDataList = authType.dataSet
     }
+    /// function used to set the email which is observed by the property observer
     func updateEmail(emailText: String, authType: AuthType) {
         signUpModel.email = emailText
         if authType == .signUp {
@@ -64,7 +67,7 @@ class AuthViewModel {
             signInModel.email = emailText
         }
     }
-    
+     /// function used to set the password which is observed by the property observer
     func updatePassword(passwordText: String, authType: AuthType) {
         if authType == .signUp {
             signUpModel.password = passwordText
@@ -72,7 +75,7 @@ class AuthViewModel {
             signInModel.password = passwordText
         }
     }
-    
+     /// function used to set the confirm password which is observed by the property observer
     func getConfirmPassword(confirmPasswordText: String) {
         signUpModel.confirmPassword = confirmPasswordText
     }
