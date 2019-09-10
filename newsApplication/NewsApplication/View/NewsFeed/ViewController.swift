@@ -12,14 +12,13 @@ import GoogleSignIn
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.isNavigationBarHidden = true
+       // navigationController?.isNavigationBarHidden = true
         GIDSignIn.sharedInstance()?.presentingViewController = self
         FireBaseConfig.shared.googleSignInHandler = { ( isSucess: Bool) -> Void in
             print(isSucess)
         }
     }
-    
+
     @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
@@ -39,7 +38,15 @@ class ViewController: UIViewController {
         guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
             return
         }
-        signUpVC.authType = authType
-        self.navigationController?.pushViewController(signUpVC, animated: true)
+        signUpVC.authViewModel.authType = authType
+         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
+        self.present(navigationControllerSignUpVC,animated: true,completion: nil)
+        if signUpVC.authViewModel.authType == .signIn {
+        signUpVC.title = "SIGN IN"
+        } else if signUpVC.authViewModel.authType == .signUp {
+            //signUpVC.title = "SIGN UP"
+            navigationControllerSignUpVC.topViewController?.title = "SIGN UP"
+        }
     }
+
 }

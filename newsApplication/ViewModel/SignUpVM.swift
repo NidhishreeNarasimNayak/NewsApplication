@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import Firebase
 ///enum used to detect signup or signin login action
 enum AuthType: Int {
     case signUp
     case signIn
-    
     var dataSet: [UserData] {
         switch self {
         case .signUp:
@@ -26,7 +26,6 @@ enum UserData: Int {
     case email
     case password
     case confirmPassword
-    
     var title: String {
         switch self {
         case .email:
@@ -54,11 +53,18 @@ class AuthViewModel {
     var signUpModel = SignupModel(email: "", password: "", confirmPassword: "")
     var signInModel = SignInModel(email: "", password: "")
     var userDataList: [UserData] = []
+    typealias ErrorHandler = ((Error?) -> Void)
+    /// This is a property observer which observes which property is changed (signup or Signin)
+    var authType: AuthType = .signIn {
+        didSet {
+            getAuthData(authType: authType)
+        }
+    }
     /// function used get the data from the user for signup and signin
     func getAuthData(authType: AuthType) {
         userDataList = authType.dataSet
     }
-    /// function used to set the email which is observed by the property observer
+    /// function used to set the email which is observed by the property observer†
     func updateEmail(emailText: String, authType: AuthType) {
         signUpModel.email = emailText
         if authType == .signUp {
@@ -67,7 +73,7 @@ class AuthViewModel {
             signInModel.email = emailText
         }
     }
-     /// function used to set the password which is observed by the property observer
+    /// function used to set the password which is observed by the property observer
     func updatePassword(passwordText: String, authType: AuthType) {
         if authType == .signUp {
             signUpModel.password = passwordText
@@ -75,8 +81,27 @@ class AuthViewModel {
             signInModel.password = passwordText
         }
     }
-     /// function used to set the confirm password which is observed by the property observer
+    /// function used to set the confirm password which is observed by the property observer
     func getConfirmPassword(confirmPasswordText: String) {
         signUpModel.confirmPassword = confirmPasswordText
+    }
+
+    func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
+        if authType == .signUp {
+            Auth.auth().createUser(withEmail: signUpModel.email, password: signUpModel.password) {(_, error) in
+                if let error = error {
+                   completionHandler(error)
+                } else { completionHandler(nil)
+                    }
+            }
+        } else if authType == .signIn {
+            Auth.auth().signIn(withEmail: signInModel.email, password: signInModel.password) {(_, error) in
+                if let error = error {
+                    completionHandler(error)
+                } else {
+                    completionHandler(nil)
+                }
+            }
+        }
     }
 }

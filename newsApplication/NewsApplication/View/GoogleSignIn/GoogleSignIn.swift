@@ -23,7 +23,7 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print(user?.profile.email ?? "")
         googleSignInHandler?(error == nil)
-        guard let authentication = user.authentication else { return }
+        guard let authentication = user?.authentication else { return }
         let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credentials) { (_, error) in
             if let error = error {

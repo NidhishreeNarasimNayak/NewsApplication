@@ -19,7 +19,7 @@
 		EA71A9A7232657230053D45F /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A4232657230053D45F /* SignUpModel.swift */; };
 		EA71A9A8232657230053D45F /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A6232657230053D45F /* SignInModel.swift */; };
 		EA71A9AB232657A30053D45F /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9AA232657A30053D45F /* SignUpVM.swift */; };
-		EA71A9AF2326891C0053D45F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA71A9AE2326891C0053D45F /* .swiftlint.yml */; };
+		EA88F4DE2327B10800FF2C36 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */; };
 		EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */; };
 		EACC7B7D231E406A00C0E0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */; };
 		EACC7B82231E406A00C0E0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACC7B80231E406A00C0E0FE /* Main.storyboard */; };
@@ -42,7 +42,7 @@
 		EA71A9A4232657230053D45F /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		EA71A9A6232657230053D45F /* SignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		EA71A9AA232657A30053D45F /* SignUpVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
-		EA71A9AE2326891C0053D45F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EAB9A32C231FAB7500787FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EACC7B79231E406A00C0E0FE /* newsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACC7B7C231E406A00C0E0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +171,6 @@
 		EACC7B70231E406A00C0E0FE = {
 			isa = PBXGroup;
 			children = (
-				EA71A9AE2326891C0053D45F /* .swiftlint.yml */,
 				EACC7B7B231E406A00C0E0FE /* NewsApplication */,
 				EACC7B7A231E406A00C0E0FE /* Products */,
 				06832EEEC81083F3E711C1F0 /* Pods */,
@@ -190,6 +189,7 @@
 		EACC7B7B231E406A00C0E0FE /* NewsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */,
 				EA71A9A9232657A30053D45F /* ViewModel */,
 				EA71A9A2232657230053D45F /* Model */,
 				EA71A987232656B00053D45F /* View */,
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA71A9AF2326891C0053D45F /* .swiftlint.yml in Resources */,
+				EA88F4DE2327B10800FF2C36 /* .swiftlint.yml in Resources */,
 				EACC7B87231E407700C0E0FE /* LaunchScreen.storyboard in Resources */,
 				EA509CEF232288D900EA4FB0 /* NewsFeed.storyboard in Resources */,
 				EAB9A32D231FAB7500787FF8 /* GoogleService-Info.plist in Resources */,
