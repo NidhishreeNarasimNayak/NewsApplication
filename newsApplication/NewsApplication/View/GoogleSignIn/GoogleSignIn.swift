@@ -21,7 +21,6 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
     }
-    
     // MARK: - GoogleSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print(user?.profile.email ?? "")

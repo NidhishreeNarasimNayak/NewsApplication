@@ -23,8 +23,6 @@ class SignUpVC: BaseVC {
     /// Description
    private func cancelNavigationScreen() {
     let cancelButton = UIBarButtonItem(image: UIImage(named: "cancelImage"), style: .plain, target: self, action: #selector(performCancelAction))
-        //self.navigationItem.leftItemsSupplementBackButton = true
-   // let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.red]
     navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem = cancelButton
     }
@@ -51,7 +49,7 @@ class SignUpVC: BaseVC {
         authViewModel.signUpOrSignIn {[weak self](error) in
             self?.stopSpinning()
             if let error = error {
-                
+                self?.createAlert(title: "Error", message: "This Email Id or Password is invalid")
                 print(error.localizedDescription)
             } else {
                 self?.presentNewsFeedVC()

@@ -104,6 +104,7 @@
 		EA71A987232656B00053D45F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA3E7CA3232908CF002C2DDF /* BaseVC.swift */,
 				EA71A988232656B00053D45F /* CollectionViewCell */,
 				EA71A98A232656B00053D45F /* SignUpUser */,
 				EA71A98C232656B00053D45F /* TableViewCell */,
@@ -208,10 +209,9 @@
 		EACC7B7B231E406A00C0E0FE /* NewsApplication */ = {
 			isa = PBXGroup;
 			children = (
-				EA3E7CA3232908CF002C2DDF /* BaseVC.swift */,
+				EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */,
 				EA3E7CA02328ED6B002C2DDF /* Extension */,
 				EA3E7C9D2328D1DE002C2DDF /* Constants */,
-				EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */,
 				EA71A9A9232657A30053D45F /* ViewModel */,
 				EA71A9A2232657230053D45F /* Model */,
 				EA71A987232656B00053D45F /* View */,
