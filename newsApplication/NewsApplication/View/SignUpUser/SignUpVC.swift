@@ -78,6 +78,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
             signUpCell.textField.delegate = self
             signUpCell.textField.tag = indexPath.row
             signUpCell.textField.borderStyle = .none
+            signUpCell.selectionStyle = .none
             signUpCell.textField.isSecureTextEntry = false
             if (signUpCell.textField.tag == 1) || ( signUpCell.textField.tag == 2) {
                 signUpCell.textField.isSecureTextEntry = true

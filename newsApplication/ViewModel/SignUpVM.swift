@@ -95,7 +95,6 @@ class AuthViewModel {
             }
         } else if authType == .signIn {
             Auth.auth().signIn(withEmail: signInModel.email, password: signInModel.password) {(_, error) in
-                
                 if let error = error {
                     completionHandler(error)
                 } else {

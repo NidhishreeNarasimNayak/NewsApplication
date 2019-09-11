@@ -21,8 +21,10 @@ extension BaseVC {
         loadingIndicator.color = UIColor().getOrange()
         view.addSubview(loadingIndicator)
         loadingIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     func stopSpinning() {
+        UIApplication.shared.endIgnoringInteractionEvents()
         loadingIndicator.stopAnimating()
     }
 }
