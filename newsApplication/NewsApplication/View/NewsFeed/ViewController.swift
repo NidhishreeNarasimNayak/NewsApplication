@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 /// class is used handle googleSignIn procedure
-class ViewController: UIViewController {
+class ViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -20,17 +20,18 @@ class ViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction private func googleSignIn(_ sender: Any) {
+        //startSpinning()
         GIDSignIn.sharedInstance()?.signIn()
-    }
+       }
     
     // MARK: - IBAction
     @IBAction private func createNewAccount(_ sender: Any) {
-        navigateToSIgnUpVC(authType: .signUp)  
+       navigateToSIgnUpVC(authType: .signUp)
     }
     
    // MARK: - IBAction
     @IBAction private func signInAction(_ sender: Any) {
-        navigateToSIgnUpVC(authType: .signIn)
+      navigateToSIgnUpVC(authType: .signIn)
     }
     
     /// this method is to navigate to the next viewController which is SignUpVC
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
         }
         signUpVC.authViewModel.authType = authType
         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
+        stopSpinning()
         self.present(navigationControllerSignUpVC,animated: true,completion: nil)
         navigationControllerSignUpVC.navigationBar.barTintColor = UIColor().getOrange()
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]

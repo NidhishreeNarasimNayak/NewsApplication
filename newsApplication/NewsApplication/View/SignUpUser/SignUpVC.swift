@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 //class used to change the text of a button, navigate to the next ViewController
-class SignUpVC: UIViewController {
+class SignUpVC: BaseVC {
     
     @IBOutlet weak var didTapButtonText: UIButton!
     var authViewModel = AuthViewModel()
@@ -46,9 +46,12 @@ class SignUpVC: UIViewController {
     
     // MARK: - IBAction
     @IBAction private func didTapLoginButton(_ sender: Any) {
+        startSpinning()
         view.endEditing(true)
         authViewModel.signUpOrSignIn {[weak self](error) in
+            self?.stopSpinning()
             if let error = error {
+                
                 print(error.localizedDescription)
             } else {
                 self?.presentNewsFeedVC()
