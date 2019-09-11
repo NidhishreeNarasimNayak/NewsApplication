@@ -43,11 +43,14 @@ class ViewController: UIViewController {
         signUpVC.authViewModel.authType = authType
         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
         self.present(navigationControllerSignUpVC,animated: true,completion: nil)
-        navigationControllerSignUpVC.navigationBar.barTintColor = UIColor.blue
+        navigationControllerSignUpVC.navigationBar.barTintColor = UIColor().getOrange()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         if signUpVC.authViewModel.authType == .signIn {
             signUpVC.title = LoginMethodsTitle.signIn
+            navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         } else if signUpVC.authViewModel.authType == .signUp {
            signUpVC.title = LoginMethodsTitle.signUp
+             navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         }
     }
     

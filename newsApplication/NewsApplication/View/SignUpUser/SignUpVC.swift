@@ -22,8 +22,10 @@ class SignUpVC: UIViewController {
     
     /// Description
    private func cancelNavigationScreen() {
-        let cancelButton = UIBarButtonItem(title: NavigationBarControls.cancel, style: .plain, target: self, action: #selector(performCancelAction))
-        self.navigationItem.leftItemsSupplementBackButton = true
+    let cancelButton = UIBarButtonItem(image: UIImage(named: "cancelImage"), style: .plain, target: self, action: #selector(performCancelAction))
+        //self.navigationItem.leftItemsSupplementBackButton = true
+   // let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.red]
+    navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem = cancelButton
     }
     

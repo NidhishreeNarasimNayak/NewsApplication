@@ -19,9 +19,9 @@ enum LoginMethodsTitle {
 }
 
 enum UserInputsTitle {
-    static let email = "Email Id"
+    static let email = "Email"
     static let password = "Password"
-    static let confirmPassword = "Password"
+    static let confirmPassword = "Confirm Password"
 }
 enum PlaceholderTitle {
     static let email = "Enter your email"
