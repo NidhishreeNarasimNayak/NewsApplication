@@ -37,18 +37,17 @@ class ViewController: UIViewController {
     ///
     /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore authType is used to switch between signUp and signIn.
     func navigateToSIgnUpVC(authType: AuthType) {
-        guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
+        guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: NavigateToVc.signUpVc) as? SignUpVC else {
             return
         }
         signUpVC.authViewModel.authType = authType
         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
         self.present(navigationControllerSignUpVC,animated: true,completion: nil)
+        navigationControllerSignUpVC.navigationBar.barTintColor = UIColor.blue
         if signUpVC.authViewModel.authType == .signIn {
-            signUpVC.title = "SIGN IN"
-           // navigationControllerSignUpVC.topViewController?.title = "SIGN IN"
+            signUpVC.title = LoginMethodsTitle.signIn
         } else if signUpVC.authViewModel.authType == .signUp {
-           signUpVC.title = "SIGN UP"
-           // navigationControllerSignUpVC.topViewController?.title = "SIGN UP"
+           signUpVC.title = LoginMethodsTitle.signUp
         }
     }
     

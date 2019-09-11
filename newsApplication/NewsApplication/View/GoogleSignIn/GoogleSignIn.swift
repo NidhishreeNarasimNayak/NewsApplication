@@ -27,7 +27,7 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
         let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credentials) { (_, error) in
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }

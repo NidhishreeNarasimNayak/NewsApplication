@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApplication/View/NewsFeed/ViewController.swift"
-            timestampString = "589870143.437618"
+            filePath = "NewsApplication/View/SignUpUser/SignUpVC.swift"
+            timestampString = "589884383.499367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "navigateToSIgnUpVC(authType:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "textChangeButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApplication/View/NewsFeed/ViewController.swift"
-            timestampString = "589870143.437708"
+            filePath = "NewsApplication/View/SignUpUser/SignUpVC.swift"
+            timestampString = "589884383.500159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "navigateToSIgnUpVC(authType:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "textChangeButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

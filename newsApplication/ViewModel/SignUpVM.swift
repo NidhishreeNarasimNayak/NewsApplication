@@ -29,28 +29,28 @@ enum UserData: Int {
     var title: String {
         switch self {
         case .email:
-            return "Email Id"
+            return UserInputsTitle.email
         case .password:
-            return "Password"
+            return UserInputsTitle.password
         case .confirmPassword:
-            return "Confirm password"
+            return UserInputsTitle.confirmPassword
         }
     }
     var placeholdertext: String {
         switch self {
         case .email:
-            return "Enter your email Address"
+            return PlaceholderTitle.email
         case .password:
-            return "Enter your Password"
+            return PlaceholderTitle.password
         case .confirmPassword:
-            return "Enter your confirmed password"
+            return PlaceholderTitle.confirmPassword
         }
     }
 }
 /// class used to set the user information and update in the model
 class AuthViewModel {
-    var signUpModel = SignupModel(email: "", password: "", confirmPassword: "")
-    var signInModel = SignInModel(email: "", password: "")
+    var signUpModel = SignupModel(email: UserInputs.userInput, password: UserInputs.userInput, confirmPassword: UserInputs.userInput)
+    var signInModel = SignInModel(email: UserInputs.userInput, password: UserInputs.userInput)
     var userDataList: [UserData] = []
     typealias ErrorHandler = ((Error?) -> Void)
     /// This is a property observer which observes which property is changed (signup or Signin)

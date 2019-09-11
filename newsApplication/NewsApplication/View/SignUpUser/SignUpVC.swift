@@ -16,24 +16,32 @@ class SignUpVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+      cancelNavigationScreen()
         textChangeButton()
     }
     
+    /// Description
+   private func cancelNavigationScreen() {
+        let cancelButton = UIBarButtonItem(title: NavigationBarControls.cancel, style: .plain, target: self, action: #selector(performCancelAction))
+        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.leftBarButtonItem = cancelButton
+    }
+    
     /// function used to change the text of the button
-    func textChangeButton() {
+  private func textChangeButton() {
         if authViewModel.authType == .signUp {
-            didTapButtonText.setTitle("Sign Up", for: .normal)
+            didTapButtonText.setTitle(LoginMethods.signUp, for: .normal)
         } else if authViewModel.authType == .signIn {
-            didTapButtonText.setTitle("Sign In", for: .normal)
+            didTapButtonText.setTitle(LoginMethods.signIn, for: .normal)
         }
     }
     
     /// function used to navigate to my next ViewController NewsFeedVC
-    func presentNewsFeedVC() {
-        guard  let newsFeed = UIStoryboard(name: "NewsFeed", bundle: nil).instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC else { return }
+    private func presentNewsFeedVC() {
+        guard  let newsFeed = UIStoryboard(name: NavigateToStoryboard.newsFeed, bundle: nil).instantiateViewController(withIdentifier: NavigateToVc.newsFeedVc) as? NewsFeedVC else { return }
         self.navigationController?.pushViewController(newsFeed, animated: true)
     }
+    
     // MARK: - IBAction
     @IBAction private func didTapLoginButton(_ sender: Any) {
         view.endEditing(true)
@@ -44,6 +52,10 @@ class SignUpVC: UIViewController {
                 self?.presentNewsFeedVC()
             }
         }
+    }
+    
+    @objc private func performCancelAction(sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -70,7 +82,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
@@ -82,12 +94,12 @@ extension SignUpVC: UITextFieldDelegate {
         guard let fieldType = UserData(rawValue: textField.tag) else { return }
         switch fieldType {
         case .email:
-            authViewModel.updateEmail(emailText: textField.text ?? "", authType: authViewModel.authType)
+            authViewModel.updateEmail(emailText: textField.text ?? UserInputs.userInput, authType: authViewModel.authType)
         case .password:
-            authViewModel.updatePassword(passwordText: textField.text ?? "", authType: authViewModel.authType)
+            authViewModel.updatePassword(passwordText: textField.text ?? UserInputs.userInput, authType: authViewModel.authType)
             view.endEditing(true)
         case .confirmPassword:
-            authViewModel.getConfirmPassword(confirmPasswordText: textField.text ?? "")
+            authViewModel.getConfirmPassword(confirmPasswordText: textField.text ?? UserInputs.userInput)
         }
     }
 }

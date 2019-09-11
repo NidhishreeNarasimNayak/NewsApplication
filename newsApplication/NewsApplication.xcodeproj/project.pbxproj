@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70A9FBB760DB1FD91FC79AD0 /* Pods_newsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370784142F0F997C60130AA /* Pods_newsApplication.framework */; };
+		EA3E7C9F2328D21A002C2DDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E7C9E2328D21A002C2DDF /* Constants.swift */; };
 		EA509CEF232288D900EA4FB0 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */; };
 		EA71A994232656B00053D45F /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A989232656B00053D45F /* NewsFeedCell.swift */; };
 		EA71A995232656B00053D45F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98B232656B00053D45F /* SignUpVC.swift */; };
@@ -30,6 +31,7 @@
 		6370784142F0F997C60130AA /* Pods_newsApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newsApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC71FBCDEDE3AF7E1D67E13 /* Pods-newsApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApplication.release.xcconfig"; path = "Target Support Files/Pods-newsApplication/Pods-newsApplication.release.xcconfig"; sourceTree = "<group>"; };
 		E3D233416FAC0EF6A25FCC9F /* Pods-newsApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApplication.debug.xcconfig"; path = "Target Support Files/Pods-newsApplication/Pods-newsApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		EA3E7C9E2328D21A002C2DDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA509CEE232288D900EA4FB0 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
 		EA71A989232656B00053D45F /* NewsFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		EA71A98B232656B00053D45F /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 				6370784142F0F997C60130AA /* Pods_newsApplication.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA3E7C9D2328D1DE002C2DDF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EA3E7C9E2328D21A002C2DDF /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		EA71A987232656B00053D45F /* View */ = {
@@ -186,6 +196,7 @@
 		EACC7B7B231E406A00C0E0FE /* NewsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				EA3E7C9D2328D1DE002C2DDF /* Constants */,
 				EA88F4DD2327B10800FF2C36 /* .swiftlint.yml */,
 				EA71A9A9232657A30053D45F /* ViewModel */,
 				EA71A9A2232657230053D45F /* Model */,
@@ -356,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA71A997232656B00053D45F /* GoogleSignIn.swift in Sources */,
+				EA3E7C9F2328D21A002C2DDF /* Constants.swift in Sources */,
 				EA71A9A7232657230053D45F /* SignUpModel.swift in Sources */,
 				EA71A996232656B00053D45F /* SignUpCell.swift in Sources */,
 				EA71A99A232656B00053D45F /* NewsFeedVC.swift in Sources */,

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="74j-3k-9TC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wd3-TT-2LJ">
@@ -101,7 +101,7 @@
                             <constraint firstItem="QrS-ZM-qyH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="6RD-wa-IU0"/>
                             <constraint firstItem="BbU-Fp-rs6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cmb-em-FWv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="74j-3k-9TC" secondAttribute="trailing" id="G7d-6T-H6s"/>
-                            <constraint firstItem="74j-3k-9TC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gup-ui-DoA"/>
+                            <constraint firstItem="74j-3k-9TC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gup-ui-DoA"/>
                             <constraint firstItem="KGr-WA-9mH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="IzF-Ah-20e"/>
                             <constraint firstItem="BbU-Fp-rs6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="PLe-y3-9V9"/>
                             <constraint firstItem="74j-3k-9TC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W5S-P0-Xlo"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="wd3-TT-2LJ" firstAttribute="centerX" secondItem="74j-3k-9TC" secondAttribute="centerX" id="nHe-Lo-urv"/>
                             <constraint firstItem="KGr-WA-9mH" firstAttribute="top" secondItem="QrS-ZM-qyH" secondAttribute="bottom" constant="20" id="okO-tr-qey"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QrS-ZM-qyH" secondAttribute="trailing" constant="12" id="xHE-G1-mW2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="74j-3k-9TC" secondAttribute="bottom" id="zvZ-zN-GdE"/>
+                            <constraint firstAttribute="bottom" secondItem="74j-3k-9TC" secondAttribute="bottom" id="zvZ-zN-GdE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -142,6 +142,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="w9N-bu-7tJ"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <state key="normal" title="LOG IN">
                                                 <color key="titleColor" red="0.032427298629999997" green="0.060207802640000002" blue="0.4297073287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
@@ -177,15 +178,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UW-am-9d4">
-                                                    <rect key="frame" x="30" y="320" width="354" height="1"/>
+                                                    <rect key="frame" x="30" y="320.5" width="354" height="0.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="Dsh-s1-aUZ"/>
+                                                        <constraint firstAttribute="height" constant="0.5" id="Dsh-s1-aUZ"/>
                                                         <constraint firstAttribute="width" constant="354" id="psv-mv-ASh"/>
                                                     </constraints>
                                                 </view>
                                                 <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-aO-eYS">
-                                                    <rect key="frame" x="30" y="80.5" width="354" height="229.5"/>
+                                                    <rect key="frame" x="30" y="80.5" width="354" height="230"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" red="0.056561782790000001" green="0.096163674190000006" blue="0.64310358499999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
