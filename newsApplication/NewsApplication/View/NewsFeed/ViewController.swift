@@ -8,45 +8,48 @@
 
 import UIKit
 import GoogleSignIn
-/// class performs all operations on ViewController
+/// class is used handle googleSignIn procedure
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-       // navigationController?.isNavigationBarHidden = true
         GIDSignIn.sharedInstance()?.presentingViewController = self
         FireBaseConfig.shared.googleSignInHandler = { ( isSucess: Bool) -> Void in
             print(isSucess)
         }
     }
-
+    
+    // MARK: - IBAction
     @IBAction private func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
+    // MARK: - IBAction
     @IBAction private func createNewAccount(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signUp)  
     }
     
+   // MARK: - IBAction
     @IBAction private func signInAction(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signIn)
     }
     
     /// this method is to navigate to the next viewController which is SignUpVC
     ///
-    /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore AUthType is used to swtch between signUp and signIn
+    /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore authType is used to switch between signUp and signIn.
     func navigateToSIgnUpVC(authType: AuthType) {
         guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
             return
         }
         signUpVC.authViewModel.authType = authType
-         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
+        let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
         self.present(navigationControllerSignUpVC,animated: true,completion: nil)
         if signUpVC.authViewModel.authType == .signIn {
-        signUpVC.title = "SIGN IN"
+            signUpVC.title = "SIGN IN"
+           // navigationControllerSignUpVC.topViewController?.title = "SIGN IN"
         } else if signUpVC.authViewModel.authType == .signUp {
-            //signUpVC.title = "SIGN UP"
-            navigationControllerSignUpVC.topViewController?.title = "SIGN UP"
+           signUpVC.title = "SIGN UP"
+           // navigationControllerSignUpVC.topViewController?.title = "SIGN UP"
         }
     }
-
+    
 }

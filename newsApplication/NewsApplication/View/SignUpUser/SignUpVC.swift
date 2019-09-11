@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-//class performs all operations on SignUpVC
+//class used to change the text of a button, navigate to the next ViewController
 class SignUpVC: UIViewController {
     
     @IBOutlet weak var didTapButtonText: UIButton!
@@ -34,7 +34,7 @@ class SignUpVC: UIViewController {
         guard  let newsFeed = UIStoryboard(name: "NewsFeed", bundle: nil).instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC else { return }
         self.navigationController?.pushViewController(newsFeed, animated: true)
     }
-    
+    // MARK: - IBAction
     @IBAction private func didTapLoginButton(_ sender: Any) {
         view.endEditing(true)
         authViewModel.signUpOrSignIn {[weak self](error) in
@@ -75,7 +75,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
+// MARK: - UITextFieldDelegate
 extension SignUpVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         

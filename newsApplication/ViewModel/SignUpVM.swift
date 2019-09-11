@@ -47,8 +47,7 @@ enum UserData: Int {
         }
     }
 }
-
-/// class used to get all the userdata and update it
+/// class used to set the user information and update in the model
 class AuthViewModel {
     var signUpModel = SignupModel(email: "", password: "", confirmPassword: "")
     var signInModel = SignInModel(email: "", password: "")
@@ -85,7 +84,7 @@ class AuthViewModel {
     func getConfirmPassword(confirmPasswordText: String) {
         signUpModel.confirmPassword = confirmPasswordText
     }
-
+    ///function used to get the inputs from the user, checks for any error and then store in the firebase 
     func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
         if authType == .signUp {
             Auth.auth().createUser(withEmail: signUpModel.email, password: signUpModel.password) {(_, error) in
