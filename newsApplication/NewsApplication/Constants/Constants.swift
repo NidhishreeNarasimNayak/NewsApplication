@@ -41,3 +41,8 @@ enum UserInputs {
 enum NavigationBarControls {
      static let cancel = "Cancel"
 }
+enum AlertMessages {
+    static let alertTitle = "Error"
+    static let alertMessage = "This Email Id or Password is invalid"
+    static let alertActionTitle = "OK"
+}

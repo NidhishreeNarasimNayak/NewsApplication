@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+
 /// class is used handle googleSignIn procedure
 class ViewController: BaseVC {
     override func viewDidLoad() {
@@ -22,22 +23,22 @@ class ViewController: BaseVC {
     @IBAction private func googleSignIn(_ sender: Any) {
         //startSpinning()
         GIDSignIn.sharedInstance()?.signIn()
-       }
+    }
     
     // MARK: - IBAction
     @IBAction private func createNewAccount(_ sender: Any) {
-       navigateToSIgnUpVC(authType: .signUp)
+        navigateToSIgnUpVC(authType: .signUp)
     }
     
-   // MARK: - IBAction
+    // MARK: - IBAction
     @IBAction private func signInAction(_ sender: Any) {
-      navigateToSIgnUpVC(authType: .signIn)
+        navigateToSIgnUpVC(authType: .signIn)
     }
     
     /// this method is to navigate to the next viewController which is SignUpVC
     ///
     /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore authType is used to switch between signUp and signIn.
-    func navigateToSIgnUpVC(authType: AuthType) {
+    private func navigateToSIgnUpVC(authType: AuthType) {
         guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: NavigateToVc.signUpVc) as? SignUpVC else {
             return
         }
@@ -51,9 +52,8 @@ class ViewController: BaseVC {
             signUpVC.title = LoginMethodsTitle.signIn
             navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         } else if signUpVC.authViewModel.authType == .signUp {
-           signUpVC.title = LoginMethodsTitle.signUp
-             navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
+            signUpVC.title = LoginMethodsTitle.signUp
+            navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         }
     }
-    
 }

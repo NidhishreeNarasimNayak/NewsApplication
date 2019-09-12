@@ -103,4 +103,13 @@ class AuthViewModel {
             }
         }
     }
+//    func gooleSignIn(completionHandler: @escaping ErrorHandler) {
+//        Auth.auth().signIn(with: ) { (_, error) in
+//            if let error = error {
+//            completionHandler(error)
+//        } else {
+//            completionHandler(nil)
+//        }
+//    }
+//}
 }

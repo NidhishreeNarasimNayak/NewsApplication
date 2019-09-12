@@ -17,20 +17,24 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
     }
     
     /// function used to set the clientID and assigns the delegate property to class FirebaseConfig
-    func googleSetUp() {
+   open func googleSetUp() {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
     }
     // MARK: - GoogleSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print(user?.profile.email ?? "")
         googleSignInHandler?(error == nil)
         guard let authentication = user?.authentication else { return }
         let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credentials) { (_, error) in
             if let error = error {
                 print(error.localizedDescription)
-            }
+           }
+                //else {
+//                guard  let newsFeed = UIStoryboard(name: NavigateToStoryboard.newsFeed, bundle: nil).instantiateViewController(withIdentifier: NavigateToVc.newsFeedVc) as? NewsFeedVC else { return }
+//                UINavigationController?.pushViewController(newsFeed, animated: true)
+//                UINavigationController.pushViewController(newsFeed,animated: true)
+//            }
         }
     }
 }

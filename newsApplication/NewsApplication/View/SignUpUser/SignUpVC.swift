@@ -49,7 +49,7 @@ class SignUpVC: BaseVC {
         authViewModel.signUpOrSignIn {[weak self](error) in
             self?.stopSpinning()
             if let error = error {
-                self?.createAlert(title: "Error", message: "This Email Id or Password is invalid")
+                self?.createAlert(title: AlertMessages.alertTitle, message: AlertMessages.alertMessage)
                 print(error.localizedDescription)
             } else {
                 self?.presentNewsFeedVC()
