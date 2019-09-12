@@ -8,37 +8,38 @@
 
 import UIKit
 import Firebase
-//class used to change the text of a button, navigate to the next ViewController
+
+//class used to perform signIn and signUp actions
 class SignUpVC: BaseVC {
     
     @IBOutlet weak var didTapButtonText: UIButton!
     var authViewModel = AuthViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      cancelNavigationScreen()
-        textChangeButton()
+        didTapCancel()
+        didTapTextChange()
     }
     
-    /// Description
-   private func cancelNavigationScreen() {
-    let cancelButton = UIBarButtonItem(image: UIImage(named: "cancelImage"), style: .plain, target: self, action: #selector(performCancelAction))
-    navigationController?.navigationBar.tintColor = UIColor.white
+    /// function used to perform cancel action
+    private func didTapCancel() {
+        let cancelButton = UIBarButtonItem(image: UIImage(named: "cancelImage"), style: .plain, target: self, action: #selector(performCancelAction))
+        navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem = cancelButton
     }
     
     /// function used to change the text of the button
-  private func textChangeButton() {
+    private func didTapTextChange() {
         if authViewModel.authType == .signUp {
-            didTapButtonText.setTitle(LoginMethods.signUp, for: .normal)
+            didTapButtonText.setTitle(LoginConstants.signUp, for: .normal)
         } else if authViewModel.authType == .signIn {
-            didTapButtonText.setTitle(LoginMethods.signIn, for: .normal)
+            didTapButtonText.setTitle(LoginConstants.signIn, for: .normal)
         }
     }
     
-    /// function used to navigate to my next ViewController NewsFeedVC
+    /// function used to push a View Controller 
     private func presentNewsFeedVC() {
-        guard  let newsFeed = UIStoryboard(name: NavigateToStoryboard.newsFeed, bundle: nil).instantiateViewController(withIdentifier: NavigateToVc.newsFeedVc) as? NewsFeedVC else { return }
+        guard  let newsFeed = UIStoryboard(name: StoryboardConstants.newsFeed, bundle: nil).instantiateViewController(withIdentifier: NavigationConstants.newsFeedVc) as? NewsFeedVC else { return }
         self.navigationController?.pushViewController(newsFeed, animated: true)
     }
     
@@ -49,7 +50,7 @@ class SignUpVC: BaseVC {
         authViewModel.signUpOrSignIn {[weak self](error) in
             self?.stopSpinning()
             if let error = error {
-                self?.createAlert(title: AlertMessages.alertTitle, message: AlertMessages.alertMessage)
+                self?.createAlert(title: AlertMessageConstants.alertTitle, message: AlertMessageConstants.alertMessage)
                 print(error.localizedDescription)
             } else {
                 self?.presentNewsFeedVC()
@@ -86,7 +87,7 @@ extension SignUpVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
@@ -94,16 +95,15 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
 // MARK: - UITextFieldDelegate
 extension SignUpVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         guard let fieldType = UserData(rawValue: textField.tag) else { return }
         switch fieldType {
         case .email:
-            authViewModel.updateEmail(emailText: textField.text ?? UserInputs.userInput, authType: authViewModel.authType)
+            authViewModel.updateEmail(emailText: textField.text ?? UserInputsConstants.userInput, authType: authViewModel.authType)
         case .password:
-            authViewModel.updatePassword(passwordText: textField.text ?? UserInputs.userInput, authType: authViewModel.authType)
+            authViewModel.updatePassword(passwordText: textField.text ?? UserInputsConstants.userInput, authType: authViewModel.authType)
             view.endEditing(true)
         case .confirmPassword:
-            authViewModel.getConfirmPassword(confirmPasswordText: textField.text ?? UserInputs.userInput)
+            authViewModel.getConfirmPassword(confirmPasswordText: textField.text ?? UserInputsConstants.userInput)
         }
     }
 }

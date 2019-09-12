@@ -237,21 +237,6 @@
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="16.741071428571427"/>
         </scene>
-        <!--News FeedVC-->
-        <scene sceneID="cPM-P6-tOJ">
-            <objects>
-                <viewController storyboardIdentifier="NewsFeedVC" id="zO0-3r-rOp" customClass="NewsFeedVC" customModule="newsApplication" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LQa-dQ-LKd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.70724734239999998" green="0.78674570430000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="WL8-eb-2hv"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sy9-3Y-Ka5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="286" y="640"/>
-        </scene>
     </scenes>
     <resources>
         <image name="background" width="313" height="208.5"/>

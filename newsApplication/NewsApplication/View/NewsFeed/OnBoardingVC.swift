@@ -25,12 +25,10 @@ class OnBoardingVC: BaseVC {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
-    // MARK: - IBAction
     @IBAction private func createNewAccount(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signUp)
     }
     
-    // MARK: - IBAction
     @IBAction private func signInAction(_ sender: Any) {
         navigateToSIgnUpVC(authType: .signIn)
     }
@@ -39,20 +37,20 @@ class OnBoardingVC: BaseVC {
     ///
     /// - Parameter authType: there are two types of login procedures. This includes signup and signin. Therefore authType is used to switch between signUp and signIn.
     private func navigateToSIgnUpVC(authType: AuthType) {
-        guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: NavigateToVc.signUpVc) as? SignUpVC else {
+        guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: NavigationConstants.signUpVc) as? SignUpVC else {
             return
         }
         signUpVC.authViewModel.authType = authType
         let navigationControllerSignUpVC = UINavigationController(rootViewController: signUpVC)
         stopSpinning()
         self.present(navigationControllerSignUpVC,animated: true,completion: nil)
-        navigationControllerSignUpVC.navigationBar.barTintColor = UIColor().getOrange()
+        navigationControllerSignUpVC.navigationBar.barTintColor = UIColor.getOrange()
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         if signUpVC.authViewModel.authType == .signIn {
-            signUpVC.title = LoginMethodsTitle.signIn
+            signUpVC.title = LoginTitleConstants.signIn
             navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         } else if signUpVC.authViewModel.authType == .signUp {
-            signUpVC.title = LoginMethodsTitle.signUp
+            signUpVC.title = LoginTitleConstants.signUp
             navigationControllerSignUpVC.navigationBar.titleTextAttributes = textAttributes
         }
     }

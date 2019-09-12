@@ -8,40 +8,35 @@
 
 import Foundation
 
-enum LoginMethods {
-static let signIn = "Sign In"
-static let  signUp = "Sign Up"
+enum LoginConstants {
+    static let signIn = "Sign In"
+    static let  signUp = "Sign Up"
 }
 
-enum LoginMethodsTitle {
+enum LoginTitleConstants {
     static let signIn = "SIGN IN"
     static let signUp = "SIGN UP"
 }
 
-enum UserInputsTitle {
+enum UserInputsConstants {
     static let email = "Email"
     static let password = "Password"
     static let confirmPassword = "Confirm Password"
+    static let userInput = ""
 }
-enum PlaceholderTitle {
+enum PlaceholderConstants {
     static let email = "Enter your email"
     static let password = "Enter your password"
     static let confirmPassword = "Confirm your password"
 }
-enum NavigateToVc {
+enum NavigationConstants {
     static let signUpVc = "SignUpVC"
     static let newsFeedVc = "NewsFeedVC"
 }
-enum NavigateToStoryboard {
+enum StoryboardConstants {
     static let newsFeed = "NewsFeed"
 }
-enum UserInputs {
-   static let userInput = ""
-}
-enum NavigationBarControls {
-     static let cancel = "Cancel"
-}
-enum AlertMessages {
+enum AlertMessageConstants {
     static let alertTitle = "Error"
     static let alertMessage = "This Email Id or Password is invalid"
     static let alertActionTitle = "OK"

@@ -31,43 +31,43 @@ enum UserData: Int {
     var title: String {
         switch self {
         case .email:
-            return UserInputsTitle.email
+            return UserInputsConstants.email
         case .password:
-            return UserInputsTitle.password
+            return UserInputsConstants.password
         case .confirmPassword:
-            return UserInputsTitle.confirmPassword
+            return UserInputsConstants.confirmPassword
         }
     }
     var placeholdertext: String {
         switch self {
         case .email:
-            return PlaceholderTitle.email
+            return PlaceholderConstants.email
         case .password:
-            return PlaceholderTitle.password
+            return PlaceholderConstants.password
         case .confirmPassword:
-            return PlaceholderTitle.confirmPassword
+            return PlaceholderConstants.confirmPassword
         }
     }
 }
 
 /// class used to set the user information and update in the model
 class AuthViewModel {
-    var signUpModel = SignupModel(email: UserInputs.userInput, password: UserInputs.userInput, confirmPassword: UserInputs.userInput)
-    var signInModel = SignInModel(email: UserInputs.userInput, password: UserInputs.userInput)
+    var signUpModel = SignupModel(email: UserInputsConstants.userInput, password: UserInputsConstants.userInput, confirmPassword: UserInputsConstants.userInput)
+    var signInModel = SignInModel(email: UserInputsConstants.userInput, password: UserInputsConstants.userInput)
     var userDataList: [UserData] = []
     typealias ErrorHandler = ((Error?) -> Void)
-    /// This is a property observer which observes which property is changed (signup or Signin)
+    /// property observer which observes the change in property 
     var authType: AuthType = .signIn {
         didSet {
             getAuthData(authType: authType)
         }
     }
     /// function used get the data from the user for signup and signin
-   public func getAuthData(authType: AuthType) {
+    func getAuthData(authType: AuthType) {
         userDataList = authType.dataSet
     }
     /// function used to set the email which is observed by the property observer†
-   public func updateEmail(emailText: String, authType: AuthType) {
+    func updateEmail(emailText: String, authType: AuthType) {
         signUpModel.email = emailText
         if authType == .signUp {
             signUpModel.email = emailText
@@ -76,7 +76,7 @@ class AuthViewModel {
         }
     }
     /// function used to set the password which is observed by the property observer
-   public func updatePassword(passwordText: String, authType: AuthType) {
+    func updatePassword(passwordText: String, authType: AuthType) {
         if authType == .signUp {
             signUpModel.password = passwordText
         } else {
@@ -84,17 +84,17 @@ class AuthViewModel {
         }
     }
     /// function used to set the confirm password which is observed by the property observer
-  public  func getConfirmPassword(confirmPasswordText: String) {
+    func getConfirmPassword(confirmPasswordText: String) {
         signUpModel.confirmPassword = confirmPasswordText
     }
     ///function used to get the inputs from the user, checks for any error and then store in the firebase 
-   public func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
+    func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
         if authType == .signUp {
             Auth.auth().createUser(withEmail: signUpModel.email, password: signUpModel.password) {(_, error) in
                 if let error = error {
-                   completionHandler(error)
+                    completionHandler(error)
                 } else { completionHandler(nil)
-                    }
+                }
             }
         } else if authType == .signIn {
             Auth.auth().signIn(withEmail: signInModel.email, password: signInModel.password) {(_, error) in

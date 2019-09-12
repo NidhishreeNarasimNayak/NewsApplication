@@ -8,7 +8,7 @@
 
 import UIKit
 
-///class which contains data related to NewsFeedVc cell
+// MARK: - UICollectionViewCell
 class NewsFeedCell: UICollectionViewCell {
     
 }

@@ -17,11 +17,11 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
     }
     
     /// function used to set the clientID and assigns the delegate property to class FirebaseConfig
-   open func googleSetUp() {
+    public func googleSetUp() {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
     }
-    // MARK: - GoogleSignInDelegate
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         googleSignInHandler?(error == nil)
         guard let authentication = user?.authentication else { return }
@@ -29,7 +29,7 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
         Auth.auth().signIn(with: credentials) { (_, error) in
             if let error = error {
                 print(error.localizedDescription)
-           }
+            }
         }
     }
 }
