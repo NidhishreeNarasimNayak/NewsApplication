@@ -8,6 +8,8 @@
 
 import UIKit
 
+///class containing the outlets label and textfield
+// MARK: - UITableViewCell
 class SignUpCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!

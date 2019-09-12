@@ -9,10 +9,10 @@
 import UIKit
 
 class NewsFeedVC: UIViewController {
-
-override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-}
+    }
 }
 extension NewsFeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,8 +22,8 @@ extension NewsFeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let newsFeedCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: NewsFeedCell.self), for: indexPath) as? NewsFeedCell {
             newsFeedCell.backgroundColor = UIColor.yellow
-             return newsFeedCell
+            return newsFeedCell
         }
-      return UICollectionViewCell()
+        return UICollectionViewCell()
     }
 }
