@@ -16,7 +16,7 @@
 		EA71A995232656B00053D45F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98B232656B00053D45F /* SignUpVC.swift */; };
 		EA71A996232656B00053D45F /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98D232656B00053D45F /* SignUpCell.swift */; };
 		EA71A997232656B00053D45F /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A98F232656B00053D45F /* GoogleSignIn.swift */; };
-		EA71A999232656B00053D45F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A992232656B00053D45F /* ViewController.swift */; };
+		EA71A999232656B00053D45F /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A992232656B00053D45F /* OnBoarding.swift */; };
 		EA71A99A232656B00053D45F /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A993232656B00053D45F /* NewsFeedVC.swift */; };
 		EA71A9A7232657230053D45F /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A4232657230053D45F /* SignUpModel.swift */; };
 		EA71A9A8232657230053D45F /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71A9A6232657230053D45F /* SignInModel.swift */; };
@@ -41,7 +41,7 @@
 		EA71A98B232656B00053D45F /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		EA71A98D232656B00053D45F /* SignUpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		EA71A98F232656B00053D45F /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
-		EA71A992232656B00053D45F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA71A992232656B00053D45F /* OnBoarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 		EA71A993232656B00053D45F /* NewsFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		EA71A9A4232657230053D45F /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		EA71A9A6232657230053D45F /* SignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		EA71A991232656B00053D45F /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				EA71A992232656B00053D45F /* ViewController.swift */,
+				EA71A992232656B00053D45F /* OnBoarding.swift */,
 				EA71A993232656B00053D45F /* NewsFeedVC.swift */,
 			);
 			path = NewsFeed;
@@ -389,7 +389,7 @@
 				EACC7B7D231E406A00C0E0FE /* AppDelegate.swift in Sources */,
 				EA71A994232656B00053D45F /* NewsFeedCell.swift in Sources */,
 				EA3E7CA4232908CF002C2DDF /* BaseVC.swift in Sources */,
-				EA71A999232656B00053D45F /* ViewController.swift in Sources */,
+				EA71A999232656B00053D45F /* OnBoarding.swift in Sources */,
 				EA71A9AB232657A30053D45F /* SignUpVM.swift in Sources */,
 				EA71A9A8232657230053D45F /* SignInModel.swift in Sources */,
 				EA3E7CA22328EE31002C2DDF /* Extension+UIColor.swift in Sources */,

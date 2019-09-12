@@ -30,11 +30,6 @@ class FireBaseConfig: NSObject, GIDSignInDelegate {
             if let error = error {
                 print(error.localizedDescription)
            }
-                //else {
-//                guard  let newsFeed = UIStoryboard(name: NavigateToStoryboard.newsFeed, bundle: nil).instantiateViewController(withIdentifier: NavigateToVc.newsFeedVc) as? NewsFeedVC else { return }
-//                UINavigationController?.pushViewController(newsFeed, animated: true)
-//                UINavigationController.pushViewController(newsFeed,animated: true)
-//            }
         }
     }
 }

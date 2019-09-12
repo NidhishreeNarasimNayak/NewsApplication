@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 ///class which contains instance of UIActivityIndicatorView
-class BaseVC:  UIViewController {
+ class BaseVC:  UIViewController {
     var loadingIndicator = UIActivityIndicatorView()
 }
 

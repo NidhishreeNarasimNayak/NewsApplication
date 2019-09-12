@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 
 /// class is used handle googleSignIn procedure
-class ViewController: BaseVC {
+class OnBoardingVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self

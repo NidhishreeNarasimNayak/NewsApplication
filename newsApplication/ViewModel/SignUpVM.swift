@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+
 ///enum used to detect signup or signin login action
 enum AuthType: Int {
     case signUp
@@ -21,6 +22,7 @@ enum AuthType: Int {
         }
     }
 }
+
 /// enum used to take email, password and confirm password as input
 enum UserData: Int {
     case email
@@ -47,6 +49,7 @@ enum UserData: Int {
         }
     }
 }
+
 /// class used to set the user information and update in the model
 class AuthViewModel {
     var signUpModel = SignupModel(email: UserInputs.userInput, password: UserInputs.userInput, confirmPassword: UserInputs.userInput)
@@ -60,11 +63,11 @@ class AuthViewModel {
         }
     }
     /// function used get the data from the user for signup and signin
-    func getAuthData(authType: AuthType) {
+   public func getAuthData(authType: AuthType) {
         userDataList = authType.dataSet
     }
     /// function used to set the email which is observed by the property observer†
-    func updateEmail(emailText: String, authType: AuthType) {
+   public func updateEmail(emailText: String, authType: AuthType) {
         signUpModel.email = emailText
         if authType == .signUp {
             signUpModel.email = emailText
@@ -73,7 +76,7 @@ class AuthViewModel {
         }
     }
     /// function used to set the password which is observed by the property observer
-    func updatePassword(passwordText: String, authType: AuthType) {
+   public func updatePassword(passwordText: String, authType: AuthType) {
         if authType == .signUp {
             signUpModel.password = passwordText
         } else {
@@ -81,11 +84,11 @@ class AuthViewModel {
         }
     }
     /// function used to set the confirm password which is observed by the property observer
-    func getConfirmPassword(confirmPasswordText: String) {
+  public  func getConfirmPassword(confirmPasswordText: String) {
         signUpModel.confirmPassword = confirmPasswordText
     }
     ///function used to get the inputs from the user, checks for any error and then store in the firebase 
-    func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
+   public func signUpOrSignIn(completionHandler: @escaping ErrorHandler) {
         if authType == .signUp {
             Auth.auth().createUser(withEmail: signUpModel.email, password: signUpModel.password) {(_, error) in
                 if let error = error {
@@ -103,13 +106,4 @@ class AuthViewModel {
             }
         }
     }
-//    func gooleSignIn(completionHandler: @escaping ErrorHandler) {
-//        Auth.auth().signIn(with: ) { (_, error) in
-//            if let error = error {
-//            completionHandler(error)
-//        } else {
-//            completionHandler(nil)
-//        }
-//    }
-//}
 }
